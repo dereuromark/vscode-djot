@@ -37,6 +37,30 @@ djot-php output (admonitions, tabs, code groups, definition lists, captions, and
 - **Open Preview**: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>
   (<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd> on macOS)
 
+## Installation
+
+### From the Marketplace
+
+Once published, search for **Djot** (publisher `dereuromark`) in the Extensions view
+(<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>), or install from the command line:
+
+```bash
+code --install-extension dereuromark.vscode-djot
+```
+
+### From a local build (VSIX)
+
+Build a `.vsix` and install it locally:
+
+```bash
+npm install
+npm run package    # produces vscode-djot-<version>.vsix
+code --install-extension vscode-djot-0.1.0.vsix
+```
+
+Or run it without installing: open this folder in VS Code and press <kbd>F5</kbd> to launch an
+Extension Development Host (see [Development](#development)).
+
 ## Requirements
 
 The preview shells out to the djot-php CLI, so it needs PHP and the
