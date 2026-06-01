@@ -1,0 +1,53 @@
+Note: frontmatter and fenced language embedding need external grammars
+(yaml, php, ...) which the snapshot tool does not load, so they are not
+asserted here; they work in VS Code. This file covers self-contained tokens.
+
+# Heading one
+
+## Heading two
+
+A paragraph with _emphasis_ and *strong* and `verbatim` text.
+
+Highlight {=marked=}, insert {+added+}, delete {-removed-}, super^x^, sub~y~.
+
+A symbol :smile: and a footnote[^1] reference.
+
+Inline math $`a^2 + b^2`$ here.
+
+$$`\int_0^1 x \, dx`
+
+[A link](https://example.com) and [a span]{.cls #id}.
+
+![alt text](pic.png){width="100"}
+
+<https://autolink.test>
+
+> A block quote.
+
+- bullet with _emph_ inside
+- [ ] task open
+- [x] task done
+
+1. first ordered
+2. second ordered
+
+: Term
+
+  Definition.
+
+| H1 | H2 |
+|----|----|
+| a  | b  |
+^ Caption.
+
+::: warning
+Admonition body.
+:::
+
+``` =html
+<b>raw</b>
+```
+
+{% a comment %}
+
+[^1]: Footnote definition.

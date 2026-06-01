@@ -1,0 +1,149 @@
+{
+  "Heading": {
+    "prefix": "h",
+    "body": "${1:#} ${2:Heading}",
+    "description": "ATX heading"
+  },
+  "Frontmatter (YAML)": {
+    "prefix": "frontmatter",
+    "body": ["---", "title: ${1:Title}", "date: ${2:2026-01-01}", "---", "", "$0"],
+    "description": "YAML frontmatter block"
+  },
+  "Link": {
+    "prefix": "link",
+    "body": "[${1:text}](${2:https://example.com})$0",
+    "description": "Inline link"
+  },
+  "Link with attributes": {
+    "prefix": "linkattr",
+    "body": "[${1:text}](${2:https://example.com}){${3:.class}}$0",
+    "description": "Link with attributes"
+  },
+  "Image": {
+    "prefix": "img",
+    "body": "![${1:alt}](${2:image.png})$0",
+    "description": "Image"
+  },
+  "Image with attributes": {
+    "prefix": "imgattr",
+    "body": "![${1:alt}](${2:image.png}){${3:width=\"400\"}}$0",
+    "description": "Image with attributes (width/height/class)"
+  },
+  "Fenced code": {
+    "prefix": "code",
+    "body": ["``` ${1:php}", "$2", "```", "$0"],
+    "description": "Fenced code block with language"
+  },
+  "Raw block (HTML)": {
+    "prefix": "raw",
+    "body": ["``` =html", "$1", "```", "$0"],
+    "description": "Raw block passed through verbatim"
+  },
+  "Div": {
+    "prefix": "div",
+    "body": [":::  ${1:.class}", "$2", ":::", "$0"],
+    "description": "Generic div container"
+  },
+  "Admonition": {
+    "prefix": "note",
+    "body": [":::  ${1|note,tip,info,important,caution,warning,danger,success|}", "${2:Content}", ":::", "$0"],
+    "description": "Admonition / callout div"
+  },
+  "Tabs": {
+    "prefix": "tabs",
+    "body": [
+      "::: tabs",
+      "",
+      "## ${1:Tab one}",
+      "",
+      "${2:Content one}",
+      "",
+      "## ${3:Tab two}",
+      "",
+      "${4:Content two}",
+      "",
+      ":::",
+      "$0"
+    ],
+    "description": "Tabbed content (djot-php TabsExtension)"
+  },
+  "Code group": {
+    "prefix": "codegroup",
+    "body": [
+      "::: code-group",
+      "",
+      "``` ${1:bash} [${2:npm}]",
+      "${3:npm install}",
+      "```",
+      "",
+      "``` ${4:bash} [${5:yarn}]",
+      "${6:yarn add}",
+      "```",
+      "",
+      ":::",
+      "$0"
+    ],
+    "description": "Tabbed code group (djot-php CodeGroupExtension)"
+  },
+  "Definition list": {
+    "prefix": "deflist",
+    "body": [": ${1:Term}", "", "  ${2:Definition}", "$0"],
+    "description": "Definition list item"
+  },
+  "Table": {
+    "prefix": "table",
+    "body": [
+      "| ${1:Header} | ${2:Header} |",
+      "|---|---|",
+      "| ${3:Cell} | ${4:Cell} |",
+      "^ ${5:Caption}",
+      "$0"
+    ],
+    "description": "Table with caption"
+  },
+  "Footnote": {
+    "prefix": "fn",
+    "body": ["${1:Text}[^${2:1}]", "", "[^${2:1}]: ${3:Footnote text}", "$0"],
+    "description": "Footnote reference and definition"
+  },
+  "Math block": {
+    "prefix": "math",
+    "body": ["$$`${1:E = mc^2}`", "$0"],
+    "description": "Display math block"
+  },
+  "Inline math": {
+    "prefix": "imath",
+    "body": "$`${1:x^2}`$0",
+    "description": "Inline math"
+  },
+  "Abbreviation": {
+    "prefix": "abbr",
+    "body": ["*[${1:HTML}]: ${2:HyperText Markup Language}", "$0"],
+    "description": "Abbreviation definition"
+  },
+  "Mermaid diagram": {
+    "prefix": "mermaid",
+    "body": ["``` mermaid", "${1:graph TD; A-->B;}", "```", "$0"],
+    "description": "Mermaid diagram block (djot-php MermaidExtension)"
+  },
+  "Span with attributes": {
+    "prefix": "span",
+    "body": "[${1:text}]{${2:.class}}$0",
+    "description": "Bracketed span with attributes"
+  },
+  "Symbol": {
+    "prefix": "symbol",
+    "body": ":${1:name}:$0",
+    "description": "Symbol / emoji shortcode"
+  },
+  "Block quote": {
+    "prefix": "quote",
+    "body": "> ${1:Quoted text}$0",
+    "description": "Block quote"
+  },
+  "Task list": {
+    "prefix": "task",
+    "body": ["- [ ] ${1:Todo}", "- [x] ${2:Done}", "$0"],
+    "description": "Task list"
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "name": "vscode-djot",
+  "displayName": "Djot",
+  "description": "Djot language support with full djot-php enhanced syntax: rich highlighting, snippets, and live preview.",
+  "version": "0.1.0",
+  "publisher": "dereuromark",
+  "license": "MIT",
+  "icon": "icons/djot-icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "djot",
+    "djot-php",
+    "markup",
+    "preview",
+    "markdown"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dereuromark/vscode-djot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dereuromark/vscode-djot/issues"
+  },
+  "homepage": "https://github.com/dereuromark/vscode-djot#readme",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "main": "./dist/extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "languages": [
+      {
+        "id": "djot",
+        "aliases": [
+          "Djot",
+          "djot"
+        ],
+        "extensions": [
+          ".djot"
+        ],
+        "icon": {
+          "light": "icons/djot.svg",
+          "dark": "icons/djot.svg"
+        },
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "djot",
+        "scopeName": "text.djot",
+        "path": "./syntaxes/djot.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.frontmatter.yaml": "yaml",
+          "meta.embedded.block.frontmatter.toml": "toml",
+          "meta.embedded.block.frontmatter.json": "json",
+          "meta.embedded.block.math": "latex",
+          "meta.embedded.inline.math": "latex"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "djot",
+        "path": "./snippets/djot.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "djot.showPreview",
+        "title": "Open Preview",
+        "category": "Djot",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "djot.showPreviewToSide",
+        "title": "Open Preview to the Side",
+        "category": "Djot",
+        "icon": "$(open-preview)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "djot.showPreviewToSide",
+          "when": "editorLangId == djot",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "djot.showPreview",
+          "when": "editorLangId == djot"
+        },
+        {
+          "command": "djot.showPreviewToSide",
+          "when": "editorLangId == djot"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "djot.showPreviewToSide",
+        "key": "ctrl+k v",
+        "mac": "cmd+k v",
+        "when": "editorLangId == djot"
+      },
+      {
+        "command": "djot.showPreview",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v",
+        "when": "editorLangId == djot"
+      }
+    ],
+    "configuration": {
+      "title": "Djot",
+      "properties": {
+        "djot.php.binary": {
+          "type": "string",
+          "default": "php",
+          "description": "Path to the PHP binary used to run the djot-php CLI."
+        },
+        "djot.cli.path": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the djot-php CLI (the `djot` script). When empty, the extension auto-detects `vendor/bin/djot` in the workspace folder."
+        },
+        "djot.safeMode": {
+          "type": "string",
+          "enum": [
+            "off",
+            "default",
+            "strict"
+          ],
+          "default": "off",
+          "description": "Safe mode for HTML rendering. 'default' sanitizes HTML; 'strict' is more aggressive. Use for untrusted content."
+        },
+        "djot.preview.refresh": {
+          "type": "string",
+          "enum": [
+            "onType",
+            "onSave"
+          ],
+          "default": "onType",
+          "description": "When to refresh the preview: on every edit (debounced) or only on save."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node esbuild.js --production",
+    "watch": "node esbuild.js --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext ts",
+    "test:grammar": "vscode-tmgrammar-snap -g syntaxes/djot.tmLanguage.json \"tests/grammar/*.djot\"",
+    "test:grammar:update": "vscode-tmgrammar-snap --updateSnapshot -g syntaxes/djot.tmLanguage.json \"tests/grammar/*.djot\"",
+    "test": "npm run test:grammar",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@vscode/vsce": "^2.24.0",
+    "esbuild": "^0.20.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.4.0",
+    "vscode-tmgrammar-test": "^0.1.3"
+  }
+}

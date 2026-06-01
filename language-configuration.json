@@ -1,0 +1,47 @@
+{
+  "comments": {
+    "blockComment": ["{%", "%}"]
+  },
+  "brackets": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"]
+  ],
+  "autoClosingPairs": [
+    { "open": "{", "close": "}" },
+    { "open": "[", "close": "]" },
+    { "open": "(", "close": ")" },
+    { "open": "\"", "close": "\"", "notIn": ["string"] },
+    { "open": "'", "close": "'", "notIn": ["string"] },
+    { "open": "`", "close": "`" },
+    { "open": "$", "close": "$" },
+    { "open": "_", "close": "_" },
+    { "open": "*", "close": "*" }
+  ],
+  "surroundingPairs": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["\"", "\""],
+    ["'", "'"],
+    ["`", "`"],
+    ["$", "$"],
+    ["_", "_"],
+    ["*", "*"],
+    ["^", "^"],
+    ["~", "~"]
+  ],
+  "wordPattern": "(\\p{Alphabetic}|\\p{Number}|_)(\\p{Alphabetic}|\\p{Number}|[_-])*",
+  "onEnterRules": [
+    {
+      "beforeText": "^\\s*([-+*]|[0-9]+[.)])\\s+.*$",
+      "action": { "indent": "none", "appendText": "" }
+    }
+  ],
+  "folding": {
+    "markers": {
+      "start": "^\\s*:{3,}\\s*\\S.*$",
+      "end": "^\\s*:{3,}\\s*$"
+    }
+  }
+}

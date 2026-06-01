@@ -1,0 +1,10 @@
+node_modules/
+dist/
+out/
+*.vsix
+.DS_Store
+*.log
+
+# Working documents - not version controlled
+docs/superpowers/
+_*

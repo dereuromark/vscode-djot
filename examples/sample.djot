@@ -1,0 +1,80 @@
+---
+title: Djot djot-php showcase
+date: 2026-06-02
+---
+
+# Djot showcase
+
+A paragraph with _emphasis_, *strong*, `verbatim`, {=highlight=}, {+insert+}, {-delete-},
+super^script^ and sub~script~ text. A symbol :smile: and a footnote reference.[^note]
+
+## Links and spans
+
+See [the website](https://djot.net){.external} and an autolink <https://example.com>.
+Here is a [styled span]{.lead #intro}.
+
+![An image](image.png){width="400"}
+
+## Lists
+
+- unordered
+- task list
+  - [ ] todo
+  - [x] done
+
+1. ordered
+2. second
+
+: Term
+
+  Definition body.
+
+## Table
+
+| Name  | Role     |
+|-------|----------|
+| Alice | Author   |
+| Bob   | Reviewer |
+^ Table caption text.
+
+## Code and math
+
+``` php
+echo 'hello';
+```
+
+Inline math $`E = mc^2`$ and a block:
+
+$$`\int_0^1 x^2 \, dx`
+
+## Admonition
+
+::: warning
+Be careful with untrusted input.
+:::
+
+## Tabs
+
+::: tabs
+
+## First
+
+Content one.
+
+## Second
+
+Content two.
+
+:::
+
+## Raw and comments
+
+``` =html
+<custom-element>raw</custom-element>
+```
+
+{% this is a comment %}
+
+[^note]: The footnote definition.
+
+*[HTML]: HyperText Markup Language

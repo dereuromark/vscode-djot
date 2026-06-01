@@ -1,0 +1,213 @@
+>Note: frontmatter and fenced language embedding need external grammars
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ text.djot meta.paragraph.djot
+>(yaml, php, ...) which the snapshot tool does not load, so they are not
+#^^^^^^^^^^^^ text.djot meta.paragraph.djot
+#            ^^^ text.djot meta.paragraph.djot punctuation.definition.ellipsis.djot
+#               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ text.djot meta.paragraph.djot
+>asserted here; they work in VS Code. This file covers self-contained tokens.
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ text.djot meta.paragraph.djot
+>
+># Heading one
+#^ text.djot markup.heading.djot punctuation.definition.heading.djot
+# ^ text.djot markup.heading.djot
+#  ^^^^^^^^^^^ text.djot markup.heading.djot entity.name.section.djot
+>
+>## Heading two
+#^^ text.djot markup.heading.djot punctuation.definition.heading.djot
+#  ^ text.djot markup.heading.djot
+#   ^^^^^^^^^^^ text.djot markup.heading.djot entity.name.section.djot
+>
+>A paragraph with _emphasis_ and *strong* and `verbatim` text.
+#^^^^^^^^^^^^^^^^^ text.djot meta.paragraph.djot
+#                 ^ text.djot meta.paragraph.djot markup.italic.emphasis.djot punctuation.definition.italic.djot
+#                  ^^^^^^^^ text.djot meta.paragraph.djot markup.italic.emphasis.djot
+#                          ^ text.djot meta.paragraph.djot markup.italic.emphasis.djot punctuation.definition.italic.djot
+#                           ^^^^^ text.djot meta.paragraph.djot
+#                                ^ text.djot meta.paragraph.djot markup.bold.strong.djot punctuation.definition.bold.djot
+#                                 ^^^^^^ text.djot meta.paragraph.djot markup.bold.strong.djot
+#                                       ^ text.djot meta.paragraph.djot markup.bold.strong.djot punctuation.definition.bold.djot
+#                                        ^^^^^ text.djot meta.paragraph.djot
+#                                             ^ text.djot meta.paragraph.djot markup.inline.raw.string.djot punctuation.definition.raw.begin.djot
+#                                              ^^^^^^^^ text.djot meta.paragraph.djot markup.inline.raw.string.djot
+#                                                      ^ text.djot meta.paragraph.djot markup.inline.raw.string.djot punctuation.definition.raw.end.djot
+#                                                       ^^^^^^^ text.djot meta.paragraph.djot
+>
+>Highlight {=marked=}, insert {+added+}, delete {-removed-}, super^x^, sub~y~.
+#^^^^^^^^^^ text.djot meta.paragraph.djot
+#          ^^ text.djot meta.paragraph.djot markup.highlight.djot markup.mark.djot punctuation.definition.highlight.djot
+#            ^^^^^^ text.djot meta.paragraph.djot markup.highlight.djot markup.mark.djot
+#                  ^^ text.djot meta.paragraph.djot markup.highlight.djot markup.mark.djot punctuation.definition.highlight.djot
+#                    ^^^^^^^^^ text.djot meta.paragraph.djot
+#                             ^^ text.djot meta.paragraph.djot markup.inserted.djot markup.underline.insert.djot punctuation.definition.inserted.djot
+#                               ^^^^^ text.djot meta.paragraph.djot markup.inserted.djot markup.underline.insert.djot
+#                                    ^^ text.djot meta.paragraph.djot markup.inserted.djot markup.underline.insert.djot punctuation.definition.inserted.djot
+#                                      ^^^^^^^^^ text.djot meta.paragraph.djot
+#                                               ^^ text.djot meta.paragraph.djot markup.deleted.strikethrough.djot punctuation.definition.deleted.djot
+#                                                 ^^^^^^^ text.djot meta.paragraph.djot markup.deleted.strikethrough.djot
+#                                                        ^^ text.djot meta.paragraph.djot markup.deleted.strikethrough.djot punctuation.definition.deleted.djot
+#                                                          ^^^^^^^ text.djot meta.paragraph.djot
+#                                                                 ^ text.djot meta.paragraph.djot markup.superscript.djot punctuation.definition.superscript.djot
+#                                                                  ^ text.djot meta.paragraph.djot markup.superscript.djot
+#                                                                   ^ text.djot meta.paragraph.djot markup.superscript.djot punctuation.definition.superscript.djot
+#                                                                    ^^^^^ text.djot meta.paragraph.djot
+#                                                                         ^ text.djot meta.paragraph.djot markup.subscript.djot punctuation.definition.subscript.djot
+#                                                                          ^ text.djot meta.paragraph.djot markup.subscript.djot
+#                                                                           ^ text.djot meta.paragraph.djot markup.subscript.djot punctuation.definition.subscript.djot
+#                                                                            ^^ text.djot meta.paragraph.djot
+>
+>A symbol :smile: and a footnote[^1] reference.
+#^^^^^^^^^ text.djot meta.paragraph.djot
+#         ^ text.djot meta.paragraph.djot meta.symbol.djot punctuation.definition.symbol.djot
+#          ^^^^^ text.djot meta.paragraph.djot meta.symbol.djot constant.character.symbol.djot support.constant.symbol.djot
+#               ^ text.djot meta.paragraph.djot meta.symbol.djot punctuation.definition.symbol.djot
+#                ^^^^^^^^^^^^^^^ text.djot meta.paragraph.djot
+#                               ^^ text.djot meta.paragraph.djot meta.footnote.reference.djot punctuation.definition.footnote.djot
+#                                 ^ text.djot meta.paragraph.djot meta.footnote.reference.djot markup.footnote.reference.djot string.other.footnote.djot
+#                                  ^ text.djot meta.paragraph.djot meta.footnote.reference.djot punctuation.definition.footnote.djot
+#                                   ^^^^^^^^^^^^ text.djot meta.paragraph.djot
+>
+>Inline math $`a^2 + b^2`$ here.
+#^^^^^^^^^^^^ text.djot meta.paragraph.djot
+#            ^ text.djot meta.paragraph.djot markup.math.inline.djot punctuation.definition.math.djot keyword.operator.math.djot
+#             ^ text.djot meta.paragraph.djot markup.math.inline.djot punctuation.definition.math.begin.djot
+#              ^^^^^^^^^ text.djot meta.paragraph.djot markup.math.inline.djot markup.math.inline.djot meta.embedded.inline.math
+#                       ^ text.djot meta.paragraph.djot markup.math.inline.djot punctuation.definition.math.end.djot
+#                        ^^^^^^^^ text.djot meta.paragraph.djot
+>
+>$$`\int_0^1 x \, dx`
+#^^ text.djot meta.paragraph.djot markup.math.inline.djot punctuation.definition.math.djot keyword.operator.math.djot
+#  ^ text.djot meta.paragraph.djot markup.math.inline.djot punctuation.definition.math.begin.djot
+#   ^^^^^^^^^^^^^^^^ text.djot meta.paragraph.djot markup.math.inline.djot markup.math.inline.djot meta.embedded.inline.math
+#                   ^ text.djot meta.paragraph.djot markup.math.inline.djot punctuation.definition.math.end.djot
+>
+>[A link](https://example.com) and [a span]{.cls #id}.
+#^ text.djot meta.paragraph.djot meta.link.inline.djot punctuation.definition.link.text.begin.djot
+# ^^^^^^ text.djot meta.paragraph.djot meta.link.inline.djot markup.underline.link.text.djot string.other.link.title.djot
+#       ^ text.djot meta.paragraph.djot meta.link.inline.djot punctuation.definition.link.text.end.djot
+#        ^ text.djot meta.paragraph.djot meta.link.inline.djot punctuation.definition.link.url.begin.djot
+#         ^^^^^^^^^^^^^^^^^^^ text.djot meta.paragraph.djot meta.link.inline.djot markup.underline.link.djot
+#                            ^ text.djot meta.paragraph.djot meta.link.inline.djot punctuation.definition.link.url.end.djot
+#                             ^^^^^ text.djot meta.paragraph.djot
+#                                  ^ text.djot meta.paragraph.djot meta.span.djot punctuation.definition.span.begin.djot
+#                                   ^^^^^^ text.djot meta.paragraph.djot meta.span.djot
+#                                         ^ text.djot meta.paragraph.djot meta.span.djot punctuation.definition.span.end.djot
+#                                          ^ text.djot meta.paragraph.djot meta.span.djot punctuation.definition.attribute.begin.djot
+#                                           ^ text.djot meta.paragraph.djot meta.span.djot meta.attribute.djot punctuation.definition.class.djot
+#                                            ^^^ text.djot meta.paragraph.djot meta.span.djot meta.attribute.djot entity.other.attribute-name.class.djot
+#                                               ^ text.djot meta.paragraph.djot meta.span.djot meta.attribute.djot
+#                                                ^ text.djot meta.paragraph.djot meta.span.djot meta.attribute.djot punctuation.definition.id.djot
+#                                                 ^^ text.djot meta.paragraph.djot meta.span.djot meta.attribute.djot entity.other.attribute-name.id.djot
+#                                                   ^ text.djot meta.paragraph.djot meta.span.djot punctuation.definition.attribute.end.djot
+#                                                    ^^ text.djot meta.paragraph.djot
+>
+>![alt text](pic.png){width="100"}
+#^^ text.djot meta.paragraph.djot meta.image.djot punctuation.definition.image.begin.djot
+#  ^^^^^^^^ text.djot meta.paragraph.djot meta.image.djot string.other.image.alt.djot
+#          ^ text.djot meta.paragraph.djot meta.image.djot punctuation.definition.image.end.djot
+#           ^ text.djot meta.paragraph.djot meta.image.djot punctuation.definition.link.url.begin.djot
+#            ^^^^^^^ text.djot meta.paragraph.djot meta.image.djot markup.underline.link.image.djot
+#                   ^ text.djot meta.paragraph.djot meta.image.djot punctuation.definition.link.url.end.djot
+#                    ^ text.djot meta.paragraph.djot meta.attribute.inline.djot punctuation.definition.attribute.begin.djot
+#                     ^^^^^ text.djot meta.paragraph.djot meta.attribute.inline.djot entity.other.attribute-name.djot
+#                          ^ text.djot meta.paragraph.djot meta.attribute.inline.djot punctuation.separator.key-value.djot
+#                           ^^^^^ text.djot meta.paragraph.djot meta.attribute.inline.djot string.quoted.djot
+#                                ^ text.djot meta.paragraph.djot meta.attribute.inline.djot punctuation.definition.attribute.end.djot
+>
+><https://autolink.test>
+#^ text.djot meta.paragraph.djot meta.link.autolink.djot punctuation.definition.link.begin.djot
+# ^^^^^^^^^^^^^^^^^^^^^ text.djot meta.paragraph.djot meta.link.autolink.djot markup.underline.link.djot
+#                      ^ text.djot meta.paragraph.djot meta.link.autolink.djot punctuation.definition.link.end.djot
+>
+>> A block quote.
+#^ text.djot markup.quote.djot punctuation.definition.quote.begin.djot
+# ^ text.djot markup.quote.djot
+#  ^^^^^^^^^^^^^^^ text.djot markup.quote.djot
+>
+>- bullet with _emph_ inside
+#^ text.djot meta.list.item.unordered.djot punctuation.definition.list.unordered.djot keyword.control.list.djot
+# ^ text.djot meta.list.item.unordered.djot
+#  ^^^^^^^^^^^^ text.djot meta.list.item.unordered.djot
+#              ^ text.djot meta.list.item.unordered.djot markup.italic.emphasis.djot punctuation.definition.italic.djot
+#               ^^^^ text.djot meta.list.item.unordered.djot markup.italic.emphasis.djot
+#                   ^ text.djot meta.list.item.unordered.djot markup.italic.emphasis.djot punctuation.definition.italic.djot
+#                    ^^^^^^^ text.djot meta.list.item.unordered.djot
+>- [ ] task open
+#^ text.djot meta.list.item.unordered.djot punctuation.definition.list.unordered.djot keyword.control.list.djot
+# ^ text.djot meta.list.item.unordered.djot
+#  ^^^ text.djot meta.list.item.unordered.djot constant.language.checkbox.djot markup.list.task.djot
+#     ^^^^^^^^^^ text.djot meta.list.item.unordered.djot
+>- [x] task done
+#^ text.djot meta.list.item.unordered.djot punctuation.definition.list.unordered.djot keyword.control.list.djot
+# ^ text.djot meta.list.item.unordered.djot
+#  ^^^ text.djot meta.list.item.unordered.djot constant.language.checkbox.djot markup.list.task.djot
+#     ^^^^^^^^^^ text.djot meta.list.item.unordered.djot
+>
+>1. first ordered
+#^^ text.djot meta.list.item.ordered.djot punctuation.definition.list.ordered.djot keyword.control.list.djot
+#  ^ text.djot meta.list.item.ordered.djot
+#   ^^^^^^^^^^^^^ text.djot meta.list.item.ordered.djot
+>2. second ordered
+#^^ text.djot meta.list.item.ordered.djot punctuation.definition.list.ordered.djot keyword.control.list.djot
+#  ^ text.djot meta.list.item.ordered.djot
+#   ^^^^^^^^^^^^^^ text.djot meta.list.item.ordered.djot
+>
+>: Term
+#^ text.djot punctuation.definition.list.definition.djot keyword.control.list.djot
+# ^ text.djot
+#  ^^^^ text.djot entity.name.type.definition.term.djot
+>
+>  Definition.
+#^^^^^^^^^^^^^^ text.djot
+>
+>| H1 | H2 |
+#^ text.djot meta.table.row.djot punctuation.definition.table.djot
+# ^^^^ text.djot meta.table.row.djot
+#     ^ text.djot meta.table.row.djot punctuation.definition.table.djot
+#      ^^^^ text.djot meta.table.row.djot
+#          ^ text.djot meta.table.row.djot punctuation.definition.table.djot
+>|----|----|
+#^ text.djot meta.table.separator.djot punctuation.definition.table.djot
+# ^^^^^^^^^ text.djot meta.table.separator.djot punctuation.definition.table.separator.djot
+#          ^ text.djot meta.table.separator.djot punctuation.definition.table.djot
+>| a  | b  |
+#^ text.djot meta.table.row.djot punctuation.definition.table.djot
+# ^^^^ text.djot meta.table.row.djot
+#     ^ text.djot meta.table.row.djot punctuation.definition.table.djot
+#      ^^^^ text.djot meta.table.row.djot
+#          ^ text.djot meta.table.row.djot punctuation.definition.table.djot
+>^ Caption.
+#^ text.djot meta.table.caption.djot punctuation.definition.table.caption.djot
+# ^ text.djot meta.table.caption.djot
+#  ^^^^^^^^ text.djot meta.table.caption.djot markup.italic.table.caption.djot
+>
+>::: warning
+#^^^ text.djot meta.div.djot punctuation.definition.div.begin.djot
+#   ^ text.djot meta.div.djot
+#    ^^^^^^^ text.djot meta.div.djot meta.div.class.djot entity.name.tag.admonition.djot support.class.admonition.djot
+>Admonition body.
+#^^^^^^^^^^^^^^^^^ text.djot meta.div.djot meta.paragraph.djot
+>:::
+#^^^^ text.djot meta.div.djot meta.paragraph.djot
+>
+>``` =html
+#^^^ text.djot meta.div.djot markup.raw.block.djot punctuation.definition.raw.fenced.begin.djot
+#   ^ text.djot meta.div.djot markup.raw.block.djot
+#    ^ text.djot meta.div.djot markup.raw.block.djot punctuation.definition.raw.marker.djot keyword.operator.raw.djot
+#     ^^^^ text.djot meta.div.djot markup.raw.block.djot entity.name.type.format.djot
+><b>raw</b>
+#^^^^^^^^^^^ text.djot meta.div.djot markup.raw.block.djot markup.raw.block.content.djot meta.embedded.block.raw
+>```
+#^^^ text.djot meta.div.djot markup.raw.block.djot punctuation.definition.raw.fenced.end.djot
+>
+>{% a comment %}
+#^ text.djot meta.div.djot meta.attribute.block.djot punctuation.definition.attribute.begin.djot
+# ^^^^^^^^^^^^^ text.djot meta.div.djot meta.attribute.block.djot comment.line.percentage.attribute.djot
+#              ^ text.djot meta.div.djot meta.attribute.block.djot punctuation.definition.attribute.end.djot
+>
+>[^1]: Footnote definition.
+#^^ text.djot meta.div.djot meta.footnote.definition.djot punctuation.definition.footnote.djot
+#  ^ text.djot meta.div.djot meta.footnote.definition.djot markup.footnote.label.djot string.other.footnote.djot
+#   ^ text.djot meta.div.djot meta.footnote.definition.djot punctuation.definition.footnote.djot
+#    ^ text.djot meta.div.djot meta.footnote.definition.djot punctuation.separator.footnote.djot
+#     ^^^^^^^^^^^^^^^^^^^^^^ text.djot meta.div.djot meta.footnote.definition.djot
+>
