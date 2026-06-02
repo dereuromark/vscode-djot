@@ -2,6 +2,7 @@ import { spawn } from 'node:child_process';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as vscode from 'vscode';
+import { buildConvertArgs, escapeHtml, findCliInRoots } from './cli';
 
 const LANGUAGE_ID = 'djot';
 
@@ -119,13 +120,7 @@ class DjotPreview implements vscode.Disposable {
       return;
     }
 
-    const args = ['convert', '-', '--format=html'];
-    const safeMode = config.get<string>('safeMode', 'off');
-    if (safeMode === 'default') {
-      args.push('--safe');
-    } else if (safeMode === 'strict') {
-      args.push('--safe=strict');
-    }
+    const args = buildConvertArgs(config.get<string>('safeMode', 'off'));
 
     try {
       const html = await this.runCli(phpBinary, cliPath, args, document.getText());
@@ -152,13 +147,7 @@ class DjotPreview implements vscode.Disposable {
         }
       }
     }
-    for (const root of roots) {
-      const candidate = path.join(root, 'vendor', 'bin', 'djot');
-      if (fs.existsSync(candidate)) {
-        return candidate;
-      }
-    }
-    return undefined;
+    return findCliInRoots(roots, fs.existsSync);
   }
 
   private runCli(
@@ -252,12 +241,4 @@ pre { white-space: pre-wrap; background: var(--vscode-textCodeBlock-background);
       disposable.dispose();
     }
   }
-}
-
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
 }

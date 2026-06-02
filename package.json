@@ -33,7 +33,9 @@
     "theme": "dark"
   },
   "main": "./dist/extension.js",
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:djot"
+  ],
   "contributes": {
     "languages": [
       {
@@ -160,9 +162,10 @@
     "watch": "node esbuild.js --watch",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src --ext ts",
+    "test:unit": "node --import tsx --test src/*.test.ts",
     "test:grammar": "vscode-tmgrammar-snap -g syntaxes/djot.tmLanguage.json \"tests/grammar/*.djot\"",
     "test:grammar:update": "vscode-tmgrammar-snap --updateSnapshot -g syntaxes/djot.tmLanguage.json \"tests/grammar/*.djot\"",
-    "test": "npm run test:grammar",
+    "test": "npm run test:unit && npm run test:grammar",
     "package": "vsce package --no-dependencies"
   },
   "devDependencies": {
@@ -173,6 +176,7 @@
     "@vscode/vsce": "^2.24.0",
     "esbuild": "^0.20.0",
     "eslint": "^8.56.0",
+    "tsx": "^4.7.0",
     "typescript": "^5.4.0",
     "vscode-tmgrammar-test": "^0.1.3"
   }
